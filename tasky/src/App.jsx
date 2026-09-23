@@ -12,20 +12,28 @@ function App() {
       { id: 3, title: "Tidy up", deadline: "Today", priority: "Low" }
     ]
   });
+  const doneHandler = (taskIndex) => {
+    const tasks = [...taskState.tasks];
+    tasks[taskIndex].done = !tasks[taskIndex].done;
+    setTaskState({tasks});
+    console.log(`${taskIndex} ${tasks[taskIndex].done}`);
+  }
 
 
   return (
     <div className="container">
       <h1>Tasky</h1>
-        {taskState.tasks.map((task) => (
-    <Task
+  {taskState.tasks.map((task, index) => (              
+    <Task 
       title={task.title}
       description={task.description}
       deadline={task.deadline}
       key={task.id}
-      priority={task.priority}
+      done={task.done}
+      markDone={() => doneHandler(index)}
     />
   ))}
+
 </div>
   );
 }

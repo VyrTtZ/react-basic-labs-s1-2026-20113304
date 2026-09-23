@@ -1,11 +1,14 @@
 const Task = (props) => {
     return (
-        <div className="card">
+      <div className="card" style={{backgroundColor: props.done ? 'lightgrey' : '#5bb4c4'}}>
+
             <p className="title">{props.title}</p>
             <p>Due: {props.deadline}</p>
             <p>{props.description}</p>
 	    <b>{props.priority}</b>
-        </div>
+       <button onClick={props.markDone} className="doneButton">Done</button>
+
+       </div>
     )
 }
 
