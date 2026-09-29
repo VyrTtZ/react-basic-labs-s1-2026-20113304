@@ -6,13 +6,15 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-
+import DeleteIcon from '@mui/icons-material/Delete';
+import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Task = (props) => {
     return (
 <Grid
   key={props.id}
-  size={{ xs: 12, md: 4 }}
+  row={{ xs: 1, md: 2, lg:3 }}
 >
   <Card
     sx={{
@@ -73,14 +75,14 @@ const Task = (props) => {
       >
         Done
       </Button>
-
+<CircularProgress color="success" aria-label="Loading…" />
       <Button
         variant="contained"
         size="small"
         color="error"
         onClick={props.deleteTask}
       >
-        Delete
+        <DeleteIcon />
       </Button>
     </CardActions>
   </Card>

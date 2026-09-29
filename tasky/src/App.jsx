@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function App() {
 
@@ -79,12 +80,12 @@ function App() {
     align="center"
     gutterBottom
     sx={{
-      backgroundColor: 'gray',
+      backgroundColor: 'primary.main',
       textAlign: 'center',
-      color: 'white',
-      padding: '20px',
-      margin: '20px 0 40px 0',
-      borderRadius: '4px'
+      color: 'black',
+      padding: '10px',
+      margin: '10px 0 50px 0',
+      borderRadius: '50%'
     }}
   >
     Tasky
